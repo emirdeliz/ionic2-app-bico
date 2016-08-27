@@ -1,0 +1,24 @@
+<ion-navbar *navbar>
+    <ion-title>Enviar Foto</ion-title>
+    <ion-buttons end>
+        <button (click)="cancel($event)">
+            Cancelar
+        </button>
+    </ion-buttons>
+</ion-navbar>
+<ion-content class="container-upload-image">
+    <div padding>
+        <div class="container-image">
+            <img *ngIf="uploadImage.path" src="{{uploadImage.path}}"/>
+            <ion-icon *ngIf="!uploadImage.path" name="home"></ion-icon>
+            <button fab fab-right light (click)="openCamera()">
+                <ion-icon name="camera"></ion-icon>
+            </button>
+        </div>
+        <ion-item>
+            <ion-label floating>Descrição</ion-label>
+            <ion-textarea [(ngModel)]="uploadImage.description"></ion-textarea>
+        </ion-item>
+        <button block (click)="complete($event)">Enviar</button>
+    </div>
+</ion-content>

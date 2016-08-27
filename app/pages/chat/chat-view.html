@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar swipeBackEnabled="true">
+        <ion-title>{{professional.name}}</ion-title>
+        <ion-buttons end>
+            <img class="picture-navbar" src="/build/images/profile/{{professional.picture}}"/>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding-bottom padding-top>
+        <div *ngFor="let item of messages" class="chat-item">
+            <div class="chat-bubble {{item.isMessageOfOther? 'left': 'right'}}">
+                <div *ngIf="item.isTypeText" class="text">{{item.message}}</div>
+                <div *ngIf="item.isTypeVoiceRecord" class="voice-record">
+                    <button (click)="item.recordVoice.actionPlay()" clear item-left>
+                        <ion-icon name="{{item.recordVoice.statusMediaPlay? 'square': 'play'}}"></ion-icon>
+                    </button>
+                    <ion-range min="0" max="100" [(ngModel)]="item.recordVoice.durationMediaPlayPercent" (ionChange)="seekTo($event, item)" item-right></ion-range>
+                    <span *ngIf="item.recordVoice.statusMediaPlay" class="current-time">{{item.recordVoice.durationMediaPlay | date : 'mm:ss'}}</span>
+                </div>
+                <div *ngIf="item.isTypeImg" class="image">
+                    <img src="{{item.image.path}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="container-write-text" position="bottom">
+        <ion-input type="text" placeholder="mensagem..." (keydown.enter)="sendMessage($event)" [(ngModel)]="messageText"></ion-input>
+        <ion-buttons end>
+            <button>
+                <ion-icon name="camera"></ion-icon>
+            </button>
+            <ion-icon name="more"></ion-icon>
+            <button onHoldPress onPress="startRecord" onPressUp="stopRecord" clear>
+                <ion-icon name="mic"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

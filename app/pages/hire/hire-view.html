@@ -1,0 +1,41 @@
+<ion-navbar *navbar>
+    <ion-title>Agendar Serviço</ion-title>
+    <ion-buttons end>
+        <button (click)="openModal()">
+            Concluir
+        </button>
+    </ion-buttons>
+</ion-navbar>
+<ion-content>
+    <div class="list-item" padding>
+        <img class="picture-profile" src="/build/images/profile/{{professional.picture}}"/>
+        <span class="title">{{professional.name}}</span>
+    </div>
+    <!--
+    <ion-item (click)="openChat($event)">Enviar Mensagem</ion-item>
+
+    <ion-item>
+    <ion-label>Data agendada</ion-label>
+    <ion-datetime displayFormat="DD MMM, YYYY" pickerFormat="DD MMM, YYYY" [(ngModel)]="dtSchedule"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <button fab>
+            <ion-icon name="mic"></ion-icon>
+        </button>
+    </ion-item>
+    <div class="divider" padding>
+        <h1><span>OU</span></h1>
+    </div>
+    <ion-item>
+        <ion-label stacked>Informe a descrição do serviço</ion-label>
+        <ion-textarea placeholder="Descrição serviço"></ion-textarea>
+    </ion-item>
+    -->
+
+    <ion-item class="container-write-text">
+        <ion-textarea (keydown)="onChangeDescriptionServiceWrite($event)" placeholder="mensagem..." (keyup.enter)="sendMessage($event)" [(ngModel)]="message"></ion-textarea>
+        <ion-icon name="camera" item-right padding-right></ion-icon>
+        <ion-icon name="mic" item-right padding-left></ion-icon>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-toolbar>
+    <div>
+        <ion-title>Registrar usuário</ion-title>
+    </div>
+    <ion-buttons end>
+        <button (click)="close()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+<div class="register-form">
+    <div>
+        <ion-list>
+            <ion-item>
+                <ion-label>Usuário</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item full>
+                <ion-label>Senha</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item full>
+                <ion-label>E-mail</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button primary block (click)="register()">Registrar</button>
+        </div>
+    </div>
+</div>

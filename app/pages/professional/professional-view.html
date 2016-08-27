@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar swipeBackEnabled="true">
+        <ion-title>Perfil Profissional</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="list-item" padding>
+        <img class="picture-profile" src="/build/images/profile/{{professional.picture}}"/>
+        <span class="title">{{professional.name}}</span>
+    </div>
+    <ion-item (click)="openBudget($event)">Solicitar Orçamento</ion-item>
+    <ion-item (click)="openChat($event)">Enviar Mensagem</ion-item>
+    <ion-list class="rating-container" padding-top>
+        <ion-list-header>Média Avaliações</ion-list-header>
+        <ion-item>
+            <ion-icon name="cash" class="icon-evaluation" item-left></ion-icon>
+            <rating rate="{{professional.noteAveragePrice}}" disabled="true"></rating>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="ribbon" class="icon-evaluation" item-left></ion-icon>
+            <rating rate="{{professional.noteAverageService}}" disabled="true"></rating>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="clock" class="icon-evaluation" item-left></ion-icon>
+            <rating rate="{{professional.noteAverageScore}}" disabled="true"></rating>
+        </ion-item>
+    </ion-list>
+    <ion-list padding-top>
+        <ion-list-header>Ultimos serviços</ion-list-header>
+        <button ion-item *ngFor="let item of professional.work" class="list-item" (click)="openWork($event, item)">
+            <span class="title">{{item.dateExecution | date:'dd/MM/yyyy'}}</span>
+            <span class="sub-title">{{item.typeWork.description}}</span>
+            <div class="evaluation text-icon">
+                <span><ion-icon name="cash"></ion-icon>{{item.rating.notePrice}}</span>
+                <span><ion-icon name="ribbon"></ion-icon>{{item.rating.noteService}}</span>
+                <span><ion-icon name="clock"></ion-icon>{{item.rating.noteScore}}</span>
+            </div>
+            <span class="description">{{item.rating.description}}</span>
+        </button>
+    </ion-list>
+</ion-content>

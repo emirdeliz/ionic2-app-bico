@@ -1,0 +1,23 @@
+.container-record {
+    text-align: center;
+    color: $light;
+    height: 15vh;
+
+    span {
+        font-size: inherit;
+        vertical-align: middle;
+        padding: 0 5px;
+        position: relative;
+        z-index: 5;
+    }
+
+    button {
+        background: $background-default;
+        position: inherit;
+    }
+
+    .time-counter {
+        line-height: 12vh;
+        display: inherit;
+    }
+}

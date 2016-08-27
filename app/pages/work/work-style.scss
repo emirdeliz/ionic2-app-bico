@@ -1,0 +1,26 @@
+.work {
+    .button-fab {
+        padding: 0;
+        position: inherit;
+        width: 25vh;
+        height: 25vh;
+
+        img {
+            border-radius: 100px;
+            width: 100%;
+            height: 100%;
+        }
+
+        ion-icon {
+            font-size: 5rem;
+        }
+    }
+
+    ion-scroll {
+        height: 55vh;
+    }
+
+    ion-label {
+        color: $light;
+    }
+}

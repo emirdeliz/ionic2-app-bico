@@ -1,0 +1,31 @@
+<ion-toolbar>
+    <div>
+        <ion-title>Login</ion-title>
+    </div>
+    <ion-buttons end>
+        <button (click)="close()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+<div class="login-form">
+    <div>
+        <img class="logo"/>
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Usuário</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item full>
+                <ion-label stacked>Senha</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button primary block (click)="login()">Login</button>
+        </div>
+        <div padding>
+            <button primary block clear (click)="register()">Registrar agora</button>
+        </div>
+    </div>
+</div>

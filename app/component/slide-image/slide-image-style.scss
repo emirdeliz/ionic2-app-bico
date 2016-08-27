@@ -1,0 +1,19 @@
+.slide-image {
+    height: 100%;
+    z-index: 99999;
+    background-color: $dark;
+
+    ion-slide {
+        span {
+            color: $light;
+            font-size: 1rem;
+        }
+    }
+
+    .close {
+        position: fixed;
+        z-index: 9999;
+        top: 30px;
+        right: 20px
+    }
+}

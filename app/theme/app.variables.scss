@@ -1,0 +1,66 @@
+// http://ionicframework.com/docs/v2/theming/
+
+// Ionic Shared Functions
+// --------------------------------------------------
+// Makes Ionic Sass functions available to your App
+
+@import 'globals.core';
+
+// App Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files. Setting
+// variables before Ionic's Sass will use these variables rather than
+// Ionic's default Sass variable values. App Shared Sass imports belong
+// in the app.core.scss file and not this file. Sass variables specific
+// to the mode belong in either the app.ios.scss or app.md.scss files.
+
+
+// App Shared Color Variables
+// --------------------------------------------------
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+// Both iOS and MD colors can be further customized if colors
+// are different per mode.
+
+/*
+$primary:    #2AC29D;
+$secondary:  #E0B24A;
+$danger:     #F5A9A9;
+$light:      #A4A4A4;
+$dark:       #7867E8;
+$favorite:   #AAFF8B;
+*/
+
+$light:                           #858585 !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+
+$background-default: #fff;
+
+$chat-balloon-sender: #e6e5eb;
+$chat-balloon-sender-text: #000;
+$chat-balloon-receiver: #c1ffc1;
+$chat-message-input: #dcdcdc;
+
+$icon-color-default: #8c8c8c;
+$border-color-default: $icon-color-default;
+
+/*
+$colors: (
+    primary:    $primary,
+    secondary:  $secondary,
+    danger:     $danger,
+    light:      $light,
+    dark:       $dark,
+    favorite:   $favorite
+);
+*/

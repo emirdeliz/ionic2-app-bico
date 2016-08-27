@@ -1,0 +1,8 @@
+<ion-content padding class="slide-image">
+    <button light outline small (click)="close()" class="close">Concluir</button>
+    <ion-slides #slider pager class="slide-image">
+        <ion-slide *ngFor="let item of images">
+            <img src={{item.path}}/>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

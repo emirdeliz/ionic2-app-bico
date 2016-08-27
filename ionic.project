@@ -1,0 +1,11 @@
+{
+  "name": "ionic2-bico",
+  "app_id": "e90c5900",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "gulpStartupTasks": [
+    "watch"
+  ]
+}

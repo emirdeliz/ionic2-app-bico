@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-navbar swipeBackEnabled="true">
+        <ion-title>{{professional.name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="work">
+    <ion-list class="list-item">
+        <ion-list-header>Descrição</ion-list-header>
+        <ion-item>
+            <span class="description">{{work.description}}</span>
+        </ion-item>
+    </ion-list>
+    <carousel-image [images]="work.images"></carousel-image>
+</ion-content>

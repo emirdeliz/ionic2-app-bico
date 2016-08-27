@@ -1,0 +1,5 @@
+<div *ngFor="let item of range; let i = index" class="rating">
+    <ion-icon class="star">
+        <i class="fa {{i < rate ? 'fa-star' : 'fa-star-o'}}" (click)="update(i + 1)"></i>
+    </ion-icon>
+</div>

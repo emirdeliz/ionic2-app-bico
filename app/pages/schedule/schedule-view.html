@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Agenda</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content [ngSwitch]="typeSchedule">
+    <ion-searchbar></ion-searchbar>
+    <div padding>
+        <ion-segment [(ngModel)]="typeSchedule">
+            <ion-segment-button value="offeredJobs">
+                Contratados
+            </ion-segment-button>
+            <ion-segment-button value="workRequested">
+                Ofertados
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <ion-list *ngSwitchWhen="'offeredJobs'">
+        <ion-item *ngFor="let item of schedule.offeredJobs" (click)="itemTapped($event, item)" class="list-item">
+            <img class="picture" src="/build/images/profile/{{item.client.picture}}" item-left/>
+            <div class="item-data">
+                <div>
+                    <span class="title">{{item.client.name}}</span>
+                    <span class="sub-title">{{item.typeWork.description}}</span>
+                </div>
+                <span class="text-icon"><ion-icon name="calendar"></ion-icon>{{item.dateExecution | date:'dd/MM/yyyy hh:mm'}}</span>
+                <span class="description">{{item.description}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchWhen="'workRequested'">
+        <ion-item *ngFor="let item of schedule.workRequested" (click)="itemTapped($event, item)" class="list-item">
+            <img class="picture" src="/build/images/profile/{{item.professional.picture}}" item-left/>
+            <div class="item-data">
+                <div>
+                    <span class="title">{{item.professional.name}}</span>
+                    <span class="sub-title">{{item.typeWork.description}}</span>
+                </div>
+                <span class="text-icon"><ion-icon name="calendar"></ion-icon>{{item.dateExecution | date:'dd/MM/yyyy hh:mm'}}</span>
+                <span class="description">{{item.description}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

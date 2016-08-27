@@ -1,0 +1,10 @@
+<div class="carousel-image">
+    <ion-scroll scrollX="true" zoom="false">
+        <button *ngIf="editable" fab fab-right light (click)="openCamera()">
+            <ion-icon name="camera"></ion-icon>
+        </button>
+        <button *ngFor="let item of images" fab fab-bottom fab-right light (click)="openImage(item)">
+            <img src={{item.path}} />
+        </button>
+    </ion-scroll>
+</div>

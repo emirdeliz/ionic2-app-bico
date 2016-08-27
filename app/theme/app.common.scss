@@ -1,0 +1,113 @@
+.picture,
+.picture-profile,
+.picture-navbar {
+    border-radius: 500px;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+.picture {
+    width: 10vh;
+}
+
+.picture-profile {
+    width: 15vh;
+}
+
+.picture-navbar {
+    width: 6.5vh;
+    float: right;
+}
+
+ion-navbar {
+    ion-title {
+        .picture {
+            width: 40px;
+        }
+    }
+}
+
+.list-item {
+    .title {
+        font-size: 2rem;
+    }
+
+    .sub-title {
+        font-size: 1.3rem;
+    }
+
+    .distance {
+        float: right;
+        font-size: 1.3rem;
+
+        ion-icon {
+            padding-right: 3px;
+            color: $dark;
+        }
+    }
+
+    .description {
+        font-size: 1.2rem;
+        display:block;
+        white-space: normal;
+        color: $light;
+    }
+
+    .text-icon {
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        ion-icon {
+            padding: 5px;
+        }
+    }
+}
+
+ion-icon {
+    color: $icon-color-default;
+}
+
+.container-write-text {
+    border-top: solid 1px $light;
+
+    ion-input {
+        width: 40vh;
+        padding: 5px;
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            border: solid 1px $chat-message-input;
+            background: $background-default;
+            word-wrap: break-word;
+        }
+    }
+
+    record-audio {
+        width: 15vh;
+    }
+
+    ion-buttons {
+        width: 30vh;
+
+        button {
+            vertical-align: middle;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        ion-icon {
+            vertical-align: middle;
+        }
+    }
+}
+
+textarea {
+    word-wrap: break-word;
+}
+
+/* Fix Bug https://github.com/driftyco/ionic/issues/6540 */
+.nav-decor {
+    background: #FFF !important;
+}

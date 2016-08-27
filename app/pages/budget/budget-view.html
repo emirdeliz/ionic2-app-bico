@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Orçamento</ion-title>
+        <ion-buttons end>
+            <button (click)="cancel()">
+                Cancelar
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="budget">
+    <carousel-image [images]="images" editable="true"></carousel-image>
+    <ion-item class="container-write-text">
+        <ion-label>Informe o Tipo Serviço</ion-label>
+        <ion-select [(ngModel)]="typeWork">
+            <ion-option *ngFor="let item of professional.typeWork">{{item.description}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Informe a Descrição do Serviço</ion-label>
+        <ion-textarea [(ngModel)]="message"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-grid class="container-record">
+            <ion-row>
+                <ion-col width-33>
+                    <button *ngIf="recordVoice.alreadyRecordable" (click)="recordVoice.actionPlay($event)" fab clear>
+                        <ion-icon name="{{recordVoice.statusMediaPlay? 'square': 'play'}}"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col width-33>
+                    <button onHoldPress onPress="startRecord" onPressUp="stopRecord" fab clear item-right>
+                        <ion-icon name="mic"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col width-33>
+                    <span class="time-counter" *ngIf="recordVoice.alreadyRecordable && recordVoice.statusMediaRecord" item-right>{{recordVoice.durationMediaRecord | date : 'mm:ss'}}</span>
+                    <span class="time-counter" *ngIf="recordVoice.statusMediaPlay" item-right>{{recordVoice.durationMediaPlay | date : 'mm:ss'}}</span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+    <button block (click)="complete($event)">Enviar</button>
+</ion-content>
